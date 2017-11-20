@@ -32,6 +32,7 @@ GameObject:
   - component: {fileID: 114458710265514494}
   - component: {fileID: 114581199757373800}
   - component: {fileID: 114492953789874210}
+  - component: {fileID: 114432437226161936}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Untagged
@@ -293,6 +294,27 @@ Prefab:
 --- !u!1002 &100100001
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!114 &114432437226161936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7689643d982fc1441ac84528eb5783c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Reach: 4
+  InReach: 0
+  Character: e
+  TextPrefab: {fileID: 0}
+  TextPrefabInstance: {fileID: 0}
+  TextActive: 0
+  CrosshairPrefab: {fileID: 0}
+  CrosshairPrefabInstance: {fileID: 0}
+  DebugRayColor: {r: 0, g: 0, b: 0, a: 0}
+  Opacity: 1
 --- !u!114 &114458710265514494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,7 +380,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66dfffeab7ff28741b720978e7f78591, type: 3}
   m_Name: 
