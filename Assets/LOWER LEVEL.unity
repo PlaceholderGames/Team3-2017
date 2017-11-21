@@ -259,7 +259,7 @@ MonoBehaviour:
     gravity: 10
     maxFallSpeed: 20
   jumping:
-    enabled: 1
+    enabled: 0
     baseHeight: 1
     extraHeight: 4.1
     perpAmount: 0
@@ -655,6 +655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 383848388}
   - component: {fileID: 383848389}
+  - component: {fileID: 383848390}
   m_Layer: 0
   m_Name: Spotlight
   m_TagString: Untagged
@@ -684,10 +685,10 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.85294116, g: 0.85294116, b: 0.12543254, a: 0.872}
   m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
+  m_Range: 30
+  m_SpotAngle: 55
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -711,6 +712,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &383848390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 383848387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0429433a0e3fcf459a974ec95d65ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &630152859
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,7 +985,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c79448dc8649a354ea6a84c69a30f778, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.51
+      value: 0.134
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c79448dc8649a354ea6a84c69a30f778, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1256,10 +1268,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 89.325005, z: 0}
+--- !u!1 &1031102174 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: c79448dc8649a354ea6a84c69a30f778, type: 3}
+  m_PrefabInternal: {fileID: 811398050}
 --- !u!4 &1031102177 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: c79448dc8649a354ea6a84c69a30f778, type: 3}
   m_PrefabInternal: {fileID: 811398050}
+--- !u!114 &1031102178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031102174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0429433a0e3fcf459a974ec95d65ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1061099513
 GameObject:
   m_ObjectHideFlags: 0
