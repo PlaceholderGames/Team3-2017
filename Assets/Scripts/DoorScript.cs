@@ -8,6 +8,8 @@ public class DoorScript : MonoBehaviour {
     public float doorOpenAngle = 90f;
     public float doorCloseAngle = 0f;
     public float smooth = 2f;
+    public AudioClip openAudio;
+    public AudioClip closeAudio;
 
 	
 	void Start () {
@@ -25,6 +27,7 @@ public class DoorScript : MonoBehaviour {
         {
             Quaternion targetRotation = Quaternion.Euler(0, doorOpenAngle, 0);
             transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smooth * Time.deltaTime);
+            
         }
         else
         {
