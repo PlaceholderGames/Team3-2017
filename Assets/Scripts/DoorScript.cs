@@ -27,7 +27,6 @@ public class DoorScript : MonoBehaviour {
         {
             Quaternion targetRotation = Quaternion.Euler(0, doorOpenAngle, 0);
             transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smooth * Time.deltaTime);
-            
         }
         else
         {

@@ -2411,7 +2411,6 @@ GameObject:
   - component: {fileID: 1633765599}
   - component: {fileID: 1633765598}
   - component: {fileID: 1633765597}
-  - component: {fileID: 1633765596}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2432,14 +2431,6 @@ Transform:
   m_Father: {fileID: 100217150}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1633765596
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8100000, guid: 2075ef6043a4f9a42a1ce60df82d7444,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1633765594}
-  m_Enabled: 1
 --- !u!114 &1633765597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2524,6 +2515,8 @@ MonoBehaviour:
   doorOpenAngle: 0
   doorCloseAngle: -90
   smooth: 2
+  openAudio: {fileID: 8300000, guid: 42bec8872f89e94438f323e47f83bab8, type: 3}
+  closeAudio: {fileID: 8300000, guid: 190e4afa89665344783dd998776bd3a0, type: 3}
 --- !u!64 &1658216882
 MeshCollider:
   m_ObjectHideFlags: 0
