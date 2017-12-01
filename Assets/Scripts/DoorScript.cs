@@ -11,18 +11,20 @@ public class DoorScript : MonoBehaviour
     public float smooth = 2f;
     public AudioClip openAudio;
     public AudioClip closeAudio;
-    AudioSource audioSource;
+    AudioSource audioSourced;
     private object yield;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSourced = GetComponent<AudioSource>();
 
     }
 
     public void ChangeDoorState()
     {
         open = !open;
+        audioSourced.Play();
+        
 
     }
 
@@ -37,21 +39,6 @@ public class DoorScript : MonoBehaviour
         {
             Quaternion targetRotation2 = Quaternion.Euler(0, doorCloseAngle, 0);
             transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation2, smooth * Time.deltaTime);
-        }
-    }
-
-    void onOpen()
-    {
-        if (open)
-        {
-            audioSource.PlayOneShot(openAudio);
-        }
-    }
-    void onClose()
-    {
-        if (!open)
-        {
-            audioSource.PlayOneShot(closeAudio);
         }
     }
 

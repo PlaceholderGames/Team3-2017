@@ -5,9 +5,10 @@ using UnityEngine;
 public class UserInteract : MonoBehaviour {
 
     public float interactDistance = 5f;
-    
+ 
 
-	void Update () {
+
+        void Update () {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Ray ray = new Ray(transform.position, transform.forward);
@@ -17,6 +18,7 @@ public class UserInteract : MonoBehaviour {
                 if(hit.collider.CompareTag("Door"))
                 {
                     hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
+                   
                 }
             }
         }
