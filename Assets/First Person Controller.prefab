@@ -32,6 +32,7 @@ GameObject:
   - component: {fileID: 114458710265514494}
   - component: {fileID: 114581199757373800}
   - component: {fileID: 114492953789874210}
+  - component: {fileID: 114586332358889880}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Untagged
@@ -381,3 +382,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133faeabcc7c905419ac2ae75dd8815b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114586332358889880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3158b2340254214418d24629a1c67db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactDistance: 5
