@@ -6,12 +6,85 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Armature
+    100004: Bone
+    100006: Bone_001
+    100008: Bone_002
+    100010: Bone_003
+    100012: Bone_004
+    100014: Bone_005
+    100016: Bone_006
+    100018: Bone_007
+    100020: Bone_008
+    100022: Bone_009
+    100024: lowman_shoes
+    100026: Base
+    100028: Foot_l
+    100030: Foot_r
+    100032: Head
+    100034: Leg_l
+    100036: Leg_r
+    100038: Lower_Backbone
+    100040: Lowerarm_l
+    100042: Lowerarm_r
+    100044: Middle_Backbone
+    100046: Neck
+    100048: Palm_l
+    100050: Palm_r
+    100052: Root
+    100054: Shoulder_l
+    100056: Shoulder_r
+    100058: Thigh_l
+    100060: Thigh_r
+    100062: Toe_l
+    100064: Toe_r
+    100066: Upper_Backbone
+    100068: Upperarm_l
+    100070: Upperarm_r
     400000: //RootNode
+    400002: Armature
+    400004: Bone
+    400006: Bone_001
+    400008: Bone_002
+    400010: Bone_003
+    400012: Bone_004
+    400014: Bone_005
+    400016: Bone_006
+    400018: Bone_007
+    400020: Bone_008
+    400022: Bone_009
+    400024: lowman_shoes
+    400026: Base
+    400028: Foot_l
+    400030: Foot_r
+    400032: Head
+    400034: Leg_l
+    400036: Leg_r
+    400038: Lower_Backbone
+    400040: Lowerarm_l
+    400042: Lowerarm_r
+    400044: Middle_Backbone
+    400046: Neck
+    400048: Palm_l
+    400050: Palm_r
+    400052: Root
+    400054: Shoulder_l
+    400056: Shoulder_r
+    400058: Thigh_l
+    400060: Thigh_r
+    400062: Toe_l
+    400064: Toe_r
+    400066: Upper_Backbone
+    400068: Upperarm_l
+    400070: Upperarm_r
     2300000: //RootNode
+    2300002: lowman_shoes
     3300000: //RootNode
+    3300002: lowman_shoes
     4300000: lowman_shoes
     7400000: Default Take
     9500000: //RootNode
+    13700000: lowman_shoes
   materials:
     importMaterials: 1
     materialName: 0

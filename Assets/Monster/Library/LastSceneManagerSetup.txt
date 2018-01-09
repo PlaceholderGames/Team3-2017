@@ -1,0 +1,4 @@
+sceneSetups:
+- path: H:/Year 2 Games Development/Unity Engine Stuff/Team3-2017/Assets/Monster.unity
+  isLoaded: 1
+  isActive: 1
