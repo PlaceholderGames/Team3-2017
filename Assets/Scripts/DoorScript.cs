@@ -9,23 +9,18 @@ public class DoorScript : MonoBehaviour
     public float doorOpenAngle = 90f;
     public float doorCloseAngle = 0f;
     public float smooth = 2f;
-    public AudioClip openAudio;
-    public AudioClip closeAudio;
     AudioSource audioSourced;
     private object yield;
 
     void Start()
     {
         audioSourced = GetComponent<AudioSource>();
-
     }
 
     public void ChangeDoorState()
     {
-        open = !open;
-        audioSourced.Play();
-        
-
+            open = !open;
+            audioSourced.Play();
     }
 
     void Update()
