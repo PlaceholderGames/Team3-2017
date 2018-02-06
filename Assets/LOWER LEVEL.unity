@@ -1532,7 +1532,7 @@ Transform:
   - {fileID: 1956130288}
   - {fileID: 98703}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 35, y: 90, z: 0}
 --- !u!1 &404145368
 GameObject:
@@ -7614,7 +7614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nav: {fileID: 2087695037}
-  player: {fileID: 1567262757}
+  player: {fileID: 170510124}
   points:
   - {fileID: 519699618}
   - {fileID: 1037559781}
@@ -7688,7 +7688,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &2087695036
 SphereCollider:

@@ -42,31 +42,35 @@ public class MonsterMovement : MonoBehaviour {
 
     void Update()
     {
+        seePlayer = false;
         RaycastHit hit;
         Ray playerHit = new Ray(transform.position, Vector3.forward);
 
-        if(!seePlayer)
+        if (Physics.Raycast(playerHit, out hit, sightRange))
         {
-            if(Physics.Raycast(playerHit, out hit, sightRange))
+        
+            if (hit.collider.tag == "Player")
             {
-                if(hit.collider.tag == "Player")
-                {
-                    Walk();
-                    nav.SetDestination(player.position);
-                }
+               seePlayer = true;
             }
         }
-        else if(!agent.pathPending && agent.remainingDistance < 0.5f)
+
+        if (seePlayer)
         {
-           GotoNextPoint();
-        }            
-    
+            Walk();
+            nav.SetDestination(player.position);
+        }
+        else //if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        {
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                GotoNextPoint();
+        }
 
     }
 
     void Walk()
     {
-        seePlayer = true;
+        
         player = GameObject.FindGameObjectWithTag("Player").transform;
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
 
