@@ -44,11 +44,13 @@ public class MonsterMovement : MonoBehaviour {
     {
         seePlayer = false;
         RaycastHit hit;
-        Ray playerHit = new Ray(transform.position, Vector3.forward);
+        Ray MonsterHit = new Ray(transform.position, Vector3.forward);
 
-        if (Physics.Raycast(playerHit, out hit, sightRange))
+        if (Physics.Raycast(MonsterHit, out hit, sightRange))
         {
-        
+
+            //Debug.DrawLine(MonsterHit.origin, hit.point);
+
             if (hit.collider.tag == "Player")
             {
                seePlayer = true;
@@ -57,8 +59,8 @@ public class MonsterMovement : MonoBehaviour {
 
         if (seePlayer)
         {
-            Walk();
             nav.SetDestination(player.position);
+            Walk();
         }
         else //if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {

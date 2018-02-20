@@ -77,17 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
   m_ShadowMaskMode: 2
 --- !u!196 &4
@@ -568,7 +566,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141496816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49.399994, y: 14.56, z: -100.12001}
+  m_LocalPosition: {x: -62.34, y: 14.71, z: -97.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519699618}
@@ -588,7 +586,7 @@ GameObject:
   - component: {fileID: 170510120}
   m_Layer: 0
   m_Name: First Person Controller (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -709,7 +707,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170510119}
   m_LocalRotation: {x: -0, y: -0.9999127, z: -0, w: 0.013214657}
-  m_LocalPosition: {x: -74.03, y: 7.03, z: 47.74}
+  m_LocalPosition: {x: -49.93, y: 6.03, z: 48.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 365641889}
@@ -7616,15 +7614,9 @@ MonoBehaviour:
   nav: {fileID: 2087695037}
   player: {fileID: 170510124}
   points:
-  - {fileID: 519699618}
-  - {fileID: 1037559781}
-  - {fileID: 526096233}
   - {fileID: 141496820}
-  - {fileID: 1503857498}
-  - {fileID: 474467638}
-  - {fileID: 621171888}
-  seePlayer: 1
-  sightRange: 4
+  seePlayer: 0
+  sightRange: 6
 --- !u!23 &2087695032
 MeshRenderer:
   m_ObjectHideFlags: 0
