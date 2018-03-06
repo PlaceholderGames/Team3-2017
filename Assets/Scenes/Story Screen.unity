@@ -807,8 +807,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 8}
-  m_SizeDelta: {x: 362, y: 73}
+  m_AnchoredPosition: {x: 59, y: -16}
+  m_SizeDelta: {x: 1180, y: 374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997976286
 MonoBehaviour:
@@ -842,7 +842,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Story Goes Here
+  m_Text: "The scene is set in 1964 at the Rockwell Estate Hotel, Ashland, Oregon.
+    You play as Simon Brook; a private investigator investigating a famous case that
+    resulted in the closure and abandonment of the estate. \r\n\nThe reason for the
+    closure of the hotel was the murder of Henry Chalner, a client at the hotel staying
+    for one night while on a business trip 5 years ago\r\n"
 --- !u!222 &1997976287
 CanvasRenderer:
   m_ObjectHideFlags: 0
