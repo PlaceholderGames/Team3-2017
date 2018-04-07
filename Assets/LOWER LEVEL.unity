@@ -7614,7 +7614,12 @@ MonoBehaviour:
   nav: {fileID: 2087695037}
   player: {fileID: 170510124}
   points:
+  - {fileID: 1037559781}
+  - {fileID: 526096233}
   - {fileID: 141496820}
+  - {fileID: 1503857498}
+  - {fileID: 474467638}
+  - {fileID: 621171888}
   seePlayer: 0
   sightRange: 6
 --- !u!23 &2087695032
