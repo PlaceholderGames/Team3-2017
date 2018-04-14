@@ -1,0 +1,49 @@
+Initialize engine version: 5.6.3p2 (b3d7a6428558)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   23.21.13.8871
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Unity\Team3-2017\Test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Unity\Team3-2017\Test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Unity\Team3-2017\Test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Unity\Team3-2017\Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Unity\Team3-2017\Test_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading E:\Unity\Team3-2017\Test_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: E:\Unity\Team3-2017\Test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Unity\Team3-2017\Test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Unity\Team3-2017\Test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\Unity\Team3-2017\Test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.021 seconds
+Platform assembly: E:\Unity\Team3-2017\Test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Unity\Team3-2017\Test_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.088602 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 3784 -> priority: 1 
+  Thread -> id: 1528 -> priority: 1 
+  Thread -> id: 2344 -> priority: 1 
+  Thread -> id: 25f8 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.796136 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 299.
+Total: 0.172169 ms (FindLiveObjects: 0.013521 ms CreateObjectMapping: 0.010516 ms MarkObjects: 0.142122 ms  DeleteObjects: 0.005107 ms)
+
+The referenced script on this Behaviour (Game Object 'Main Camera') is missing!
+ 
+(Filename:  Line: 1744)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.338629 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2302.
+Total: 0.454911 ms (FindLiveObjects: 0.137314 ms CreateObjectMapping: 0.057690 ms MarkObjects: 0.179981 ms  DeleteObjects: 0.078122 ms)
+
+Platform assembly: E:\Unity\Team3-2017\Test_Data\Managed\Boo.Lang.dll (this message is harmless)
