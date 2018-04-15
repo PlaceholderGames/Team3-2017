@@ -5,7 +5,7 @@ using UnityEngine;
 public class UserInteract : MonoBehaviour {
 
     public float interactDistance = 5f;
- 
+    public GameObject key;
 
 
         void Update () {
@@ -15,10 +15,14 @@ public class UserInteract : MonoBehaviour {
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit, interactDistance))
             {
-                if(hit.collider.CompareTag("Door"))
+                if (!key)
                 {
-                    hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
-                   
+                    if (hit.collider.CompareTag("Door"))
+                    {
+
+                        hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
+
+                    }
                 }
             }
         }
