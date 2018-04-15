@@ -312,7 +312,10 @@ MonoBehaviour:
     Jump - Space
 
 
-    Interact - Left Click'
+    Interact - Left Click
+
+
+    Torch - Right Click'
 --- !u!222 &126287170
 CanvasRenderer:
   m_ObjectHideFlags: 0
