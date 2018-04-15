@@ -8,12 +8,12 @@
 
     protected override void SpecificInit()
     {
-        //inventory = FindObjectOfType<Inventory>();
+       // inventory = FindObjectOfType<Inventory>();
     }
 
 
     protected override void ImmediateReaction()
     {
-        //inventory.AddItem(item);
+       // inventory.AddItem(item);
     }
 }
