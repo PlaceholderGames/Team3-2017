@@ -10,9 +10,11 @@ public class MonsterMovement : MonoBehaviour {
     private int destPoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
     private SphereCollider col;
+    public Transform StartingPoint;
 
     void Start()
     {
+
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         col = GetComponent<SphereCollider>();
 

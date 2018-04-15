@@ -13,7 +13,7 @@ public class UserInteract : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
