@@ -4,30 +4,50 @@ using UnityEngine;
 
 public class UserInteract : MonoBehaviour {
 
-    public float interactDistance = 5f;
+    public float interactDistance = 10f;
+    public Camera MainCamera;
+    public Camera HidingCamera;
+    public Renderer Player;
+    public bool Hidden = false;
     public GameObject key;
 
+    void Update()
+    {
 
-        void Update () {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, interactDistance))
+            if (Physics.Raycast(ray, out hit, interactDistance))
             {
-                if (!key)
+                if (Hidden)
+                {
+                    HidingCamera.enabled = true;
+                    MainCamera.enabled = false;
+                    Player.enabled = false;
+                    Hidden = false;
+                    return;
+                }
+
+                if(key)
                 {
                     if (hit.collider.CompareTag("Door"))
                     {
-
-                        hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
-
+                       hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
                     }
+                }
+                
+                if (hit.collider.CompareTag("Hidable"))
+                {
+                    HidingCamera.enabled = false;
+                    MainCamera.enabled = true;
+                    Player.enabled = true;
+                    Hidden = true;
                 }
             }
         }
-		
-	}
+    }
+ 
 }
 
 //This requires the Mesh of the interacted object to be a child of the main object, and tagged correctly to this code. For example, Door tag is on the mesh for the door.
