@@ -7,6 +7,8 @@ public class MonsterMovement : MonoBehaviour {
     
     public Transform player;
     public Transform[] points;
+    public Transform Monster;
+    public Transform StartingPos;
     private int destPoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
     private SphereCollider col;
@@ -17,7 +19,7 @@ public class MonsterMovement : MonoBehaviour {
 
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         col = GetComponent<SphereCollider>();
-
+        StartingPos = Monster;
         agent.autoBraking = false;
 
         GotoNextPoint();
@@ -60,26 +62,13 @@ public class MonsterMovement : MonoBehaviour {
 
 void Update()
     {
-
-    
+            
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
     }
 
-
-    /*
-    Transform player;
-    UnityEngine.AI.NavMeshAgent nav;
-
-    void Awake()
+    public void MonsterToStart()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        Monster.position = StartingPos.position;
     }
-
-
-    void Update()
-    {
-        nav.SetDestination(player.position);
-    }*/
 }

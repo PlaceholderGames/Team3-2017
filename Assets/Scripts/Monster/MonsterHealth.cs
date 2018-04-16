@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class MonsterHealth : MonoBehaviour {
 
-    public int TotalHealth;
+    public int TotalHealth = 1;
     public int CurrentHelth;
 
+    CapsuleCollider capsuleCollider;
     bool IsHit;
 
 	void Awake ()
@@ -18,11 +19,13 @@ public class MonsterHealth : MonoBehaviour {
     {
         if(IsHit)
         {
-            transform.Translate(GetComponent<MonsterMovement>().MonsterToStart());
+            GetComponent<MonsterMovement>().MonsterToStart();
+            Invoke("" , 20f);
+            CurrentHelth = TotalHealth;
         }
     }
 
-    void TakeDamage(int amount, Vector3 hitPoint)
+    public void TakeDamage(int amount, Vector3 hitPoint)
     {
         if (IsHit)
         {
@@ -35,5 +38,12 @@ public class MonsterHealth : MonoBehaviour {
         {
             IsHit = true;
         }
+    }
+
+    void Hit()
+    {
+        IsHit = true;
+
+        capsuleCollider.isTrigger = true;
     }
 }
