@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour {
 
-    
+    public GameObject MonsterBody;
     public Transform player;
     public Transform[] points;
     public Transform Monster;
     public Transform StartingPos;
+    public float speed;
     private int destPoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
     private SphereCollider col;
-    public Transform StartingPoint;
+    public bool TimeToStop = false;
 
     void Start()
     {
 
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         col = GetComponent<SphereCollider>();
-        StartingPos = Monster;
         agent.autoBraking = false;
-
         GotoNextPoint();
     }
 
@@ -60,15 +59,23 @@ public class MonsterMovement : MonoBehaviour {
         }
     }
 
-void Update()
+    void Update()
     {
-            
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-            GotoNextPoint();
+          
+        if (!TimeToStop)
+        {
+           if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            {
+                GotoNextPoint();
+            }   
+        }     
     }
 
     public void MonsterToStart()
     {
-        Monster.position = StartingPos.position;
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(Monster.position, StartingPos.position, step);
+        TimeToStop = true;
+        MonsterBody.SetActive(false);
     }
 }

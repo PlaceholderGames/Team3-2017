@@ -6,6 +6,7 @@ public class MonsterHealth : MonoBehaviour {
 
     public int TotalHealth = 1;
     public int CurrentHelth;
+    public GameObject MonsterBody;
     MonsterMovement monsterMovement;
     CapsuleCollider capsuleCollider;
     bool IsHit;
@@ -21,7 +22,7 @@ public class MonsterHealth : MonoBehaviour {
         if(IsHit)
         {
             monsterMovement.GetComponent<MonsterMovement>().MonsterToStart();
-            Invoke("" , 20f);
+            Invoke("MoveOn" , 20);
             CurrentHelth = TotalHealth;
         }
     }
@@ -46,5 +47,10 @@ public class MonsterHealth : MonoBehaviour {
         IsHit = true;
 
         capsuleCollider.isTrigger = true;
+    }
+
+    void MoveOn()
+    {
+        MonsterBody.SetActive(false);
     }
 }
