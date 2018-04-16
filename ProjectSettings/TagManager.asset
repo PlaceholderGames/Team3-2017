@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Door
   - Monster
+<<<<<<< HEAD
   - Key
+=======
+  - Hidable
+>>>>>>> 99f48863afc2a3ab87f2df0c25f6f697b2228db4
   layers:
   - Default
   - TransparentFX
