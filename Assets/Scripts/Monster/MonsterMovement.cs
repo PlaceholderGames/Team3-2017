@@ -7,19 +7,20 @@ public class MonsterMovement : MonoBehaviour {
     public GameObject MonsterBody;
     public Transform player;
     public Transform[] points;
+    public Transform Monster;
+    public Transform StartingPos;
+    public float speed;
     private int destPoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
     private UnityEngine.AI.NavMeshAgent nav;
-    private SphereCollider col;
     public bool seePlayer;
-
     public float sightRange;
+
 
     void Start()
     {
 
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        col = GetComponent<SphereCollider>();
         agent.autoBraking = false;
         GotoNextPoint();
     }

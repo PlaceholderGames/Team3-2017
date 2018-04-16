@@ -33,16 +33,24 @@ public class UserInteract : MonoBehaviour {
                 }
 
                if (GameObject.Find("key")== null)
-
                 {
                     if (hit.collider.CompareTag("Door"))
                     {
                        hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
                     }
                 }
-                
+
                 if (hit.collider.CompareTag("Hidable"))
                 {
+                    if (Hidden)
+                    {
+                        HidingCamera.enabled = true;
+                        MainCamera.enabled = false;
+                        Player.enabled = false;
+                        Hidden = false;
+                        return;
+                    }
+
                     HidingCamera.enabled = false;
                     MainCamera.enabled = true;
                     Player.enabled = true;
