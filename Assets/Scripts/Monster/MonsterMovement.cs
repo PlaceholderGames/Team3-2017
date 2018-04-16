@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour {
 
-    
+    public GameObject MonsterBody;
     public Transform player;
     public Transform[] points;
+    public Transform Monster;
+    public Transform StartingPos;
+    public float speed;
     private int destPoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
-    private SphereCollider col;
+    private UnityEngine.AI.NavMeshAgent nav;
+    public bool seePlayer;
+    public float sightRange;
+
 
     void Start()
     {
+
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        col = GetComponent<SphereCollider>();
-
         agent.autoBraking = false;
-
         GotoNextPoint();
     }
 
@@ -35,49 +39,41 @@ public class MonsterMovement : MonoBehaviour {
         // cycling to the start if necessary.
         destPoint = (destPoint + 1) % points.Length;
     }
-
-    void OnTriggerEnter(Collider other)
+   
+    void Update()
     {
-        if (other.gameObject == player)
-        {
-            Vector3 direction = player.transform.position - transform.position;
-            {
-                RaycastHit hit;
+        seePlayer = false;
+        RaycastHit hit;
+        Ray MonsterHit = new Ray(transform.position, Vector3.forward);
 
-                if (Physics.Raycast(transform.position + transform.up, direction.normalized, out hit, col.radius))
-                {
-                    if (hit.collider.gameObject == player)
-                    {
-                        Debug.Log("player in sight");
-                        //Stuff happens that makes the enemy chase the player
-                    }
-                }
+        if (Physics.Raycast(MonsterHit, out hit, sightRange))
+        {
+
+            //Debug.DrawLine(MonsterHit.origin, hit.point);
+
+            if (hit.collider.tag == "Player")
+            {
+                seePlayer = true;
             }
+        }
+
+        if (seePlayer)
+        {
+            nav.SetDestination(player.position);
+            Walk();
+        }
+        else
+        {
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                GotoNextPoint();
         }
     }
 
-void Update()
+    void Walk()
     {
 
-    
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-            GotoNextPoint();
-    }
-
-
-    /*
-    Transform player;
-    UnityEngine.AI.NavMeshAgent nav;
-
-    void Awake()
-    {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+
     }
-
-
-    void Update()
-    {
-        nav.SetDestination(player.position);
-    }*/
 }
