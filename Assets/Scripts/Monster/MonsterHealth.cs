@@ -6,20 +6,21 @@ public class MonsterHealth : MonoBehaviour {
 
     public int TotalHealth = 1;
     public int CurrentHelth;
-
+    MonsterMovement monsterMovement;
     CapsuleCollider capsuleCollider;
     bool IsHit;
 
 	void Awake ()
     {
-        CurrentHelth = TotalHealth;            
+        CurrentHelth = TotalHealth;
+        capsuleCollider = GetComponent<CapsuleCollider>();
 	}
 
     void Update()
     {
         if(IsHit)
         {
-            GetComponent<MonsterMovement>().MonsterToStart();
+            monsterMovement.GetComponent<MonsterMovement>().MonsterToStart();
             Invoke("" , 20f);
             CurrentHelth = TotalHealth;
         }
@@ -27,7 +28,7 @@ public class MonsterHealth : MonoBehaviour {
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
-        if (!IsHit)
+        if (IsHit)
         {
             return;
         }
@@ -36,7 +37,7 @@ public class MonsterHealth : MonoBehaviour {
 
         if(CurrentHelth <= 0)
         {
-            IsHit = true;
+            Hit();
         }
     }
 

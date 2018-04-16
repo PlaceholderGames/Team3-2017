@@ -919,7 +919,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141496816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -1341,9 +1341,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDistance: 5
-  MainCamera: {fileID: 0}
-  HidingCamera: {fileID: 0}
-  Player: {fileID: 0}
+  MainCamera: {fileID: 1064692011}
+  HidingCamera: {fileID: 1516406030}
+  Player: {fileID: 1567262758}
   Hidden: 0
 --- !u!82 &170510126
 AudioSource:
@@ -3045,7 +3045,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 474467634}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -3297,7 +3297,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519699614}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -3386,7 +3386,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 526096229}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -3842,7 +3842,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 621171884}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -5896,7 +5896,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1037559777}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -8445,7 +8445,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1503857494}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -8521,7 +8521,7 @@ GameObject:
   - component: {fileID: 1516406027}
   m_Layer: 0
   m_Name: HidingCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8532,13 +8532,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1516406025}
-  m_LocalRotation: {x: -0.17196022, y: 0.68170863, z: -0.17253648, w: -0.6898799}
-  m_LocalPosition: {x: 0.9999969, y: 1.44, z: 0.05000014}
+  m_LocalRotation: {x: 0.011703269, y: 0.969084, z: -0.2433155, w: 0.039202653}
+  m_LocalPosition: {x: -0.06, y: 0.91, z: 1.91}
   m_LocalScale: {x: 1.3632842, y: 1.7532135, z: 1.674197}
   m_Children: []
   m_Father: {fileID: 170510124}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 151.803, y: 90.742, z: 180.234}
+  m_LocalEulerAnglesHint: {x: 151.803, y: -4.5739746, z: 180.234}
 --- !u!81 &1516406027
 AudioListener:
   m_ObjectHideFlags: 0
@@ -11718,8 +11718,8 @@ GameObject:
   - component: {fileID: 2087695031}
   - component: {fileID: 2087695037}
   - component: {fileID: 2087695036}
-  - component: {fileID: 2087695039}
   - component: {fileID: 2087695038}
+  - component: {fileID: 2087695039}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Monster

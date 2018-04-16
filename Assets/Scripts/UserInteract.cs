@@ -8,6 +8,7 @@ public class UserInteract : MonoBehaviour {
     public Camera MainCamera;
     public Camera HidingCamera;
     public Renderer Player;
+    //public MouseLook mouseLook;
     public bool Hidden = false;
 
     void Update()
@@ -21,10 +22,11 @@ public class UserInteract : MonoBehaviour {
             {
                 if (Hidden)
                 {
-                    HidingCamera.enabled = false;
-                    MainCamera.enabled = true;
-                    Player.enabled = true;
-                    Hidden = !Hidden;
+                    HidingCamera.enabled = true;
+                    //mouseLook.enabled = false;
+                    MainCamera.enabled = false;
+                    Player.enabled = false;
+                    Hidden = false;
                     return;
                 }
 
@@ -35,8 +37,9 @@ public class UserInteract : MonoBehaviour {
 
                 if (hit.collider.CompareTag("Hidable"))
                 {
-                    MainCamera.enabled = false;
-                    HidingCamera.enabled = true;
+                    //mouseLook.enabled = true;
+                    HidingCamera.enabled = false;
+                    MainCamera.enabled = true;
                     Player.enabled = true;
                     Hidden = true;
                 }
