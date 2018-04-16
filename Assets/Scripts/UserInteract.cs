@@ -20,17 +20,7 @@ public class UserInteract : MonoBehaviour {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, interactDistance))
-            {
-                if (Hidden)
-                {
-                    HidingCamera.enabled = true;
-                    MainCamera.enabled = false;
-                    Player.enabled = false;
-                    Hidden = false;
-                    return;
-                }
-
-
+            { 
                 if(key)
                 {
                     if (hit.collider.CompareTag("Door"))
@@ -41,6 +31,15 @@ public class UserInteract : MonoBehaviour {
 
                 if (hit.collider.CompareTag("Hidable"))
                 {
+                    if (Hidden)
+                    {
+                        HidingCamera.enabled = true;
+                        MainCamera.enabled = false;
+                        Player.enabled = false;
+                        Hidden = false;
+                        return;
+                    }
+
                     HidingCamera.enabled = false;
                     MainCamera.enabled = true;
                     Player.enabled = true;

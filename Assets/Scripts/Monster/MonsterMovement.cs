@@ -13,7 +13,6 @@ public class MonsterMovement : MonoBehaviour {
     private int destPoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
     private UnityEngine.AI.NavMeshAgent nav;
-    private SphereCollider col;
     public bool seePlayer;
     public float sightRange;
 
@@ -22,7 +21,6 @@ public class MonsterMovement : MonoBehaviour {
     {
 
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        col = GetComponent<SphereCollider>();
         agent.autoBraking = false;
         GotoNextPoint();
     }

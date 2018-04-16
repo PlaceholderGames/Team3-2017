@@ -30,7 +30,7 @@ public class MonsterHealth : MonoBehaviour {
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(Monster.position, StartingPos.position, step);
             MonsterBody.SetActive(false);
-            Invoke("MoveOn" , 5f);           
+            Invoke("MoveOn" , 20f);           
             CurrentHelth = TotalHealth;
             IsHit = false;
         }
