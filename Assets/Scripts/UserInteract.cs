@@ -5,7 +5,7 @@ using UnityEngine;
 public class UserInteract : MonoBehaviour {
 
     public float interactDistance = 5f;
-    public GameObject key;
+  
 
 
         void Update () {
@@ -15,7 +15,8 @@ public class UserInteract : MonoBehaviour {
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit, interactDistance))
             {
-                if (!key)
+                
+                if (GameObject.Find("key")== null)
                 {
                     if (hit.collider.CompareTag("Door"))
                     {
