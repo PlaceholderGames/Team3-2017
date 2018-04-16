@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UserInteract : MonoBehaviour {
 
+
     public float interactDistance = 10f;
     public Camera MainCamera;
     public Camera HidingCamera;
@@ -20,8 +21,18 @@ public class UserInteract : MonoBehaviour {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, interactDistance))
-            { 
-                if(key)
+            {
+
+                if (Hidden)
+                {
+                    HidingCamera.enabled = true;
+                    MainCamera.enabled = false;
+                    Player.enabled = false;
+                    Hidden = false;
+                    return;
+                }
+
+               if (GameObject.Find("key")== null)
                 {
                     if (hit.collider.CompareTag("Door"))
                     {
