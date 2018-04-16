@@ -27,7 +27,7 @@ public class MonsterHealth : MonoBehaviour {
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
-        if (IsHit)
+        if (!IsHit)
         {
             return;
         }
