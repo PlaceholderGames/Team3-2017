@@ -9,6 +9,8 @@ public class UserInteract : MonoBehaviour {
     public Camera HidingCamera;
     public Renderer Player;
     public bool Hidden = false;
+    public GameObject key;
+
 
     void Update()
     {
@@ -28,9 +30,13 @@ public class UserInteract : MonoBehaviour {
                     return;
                 }
 
-                if (hit.collider.CompareTag("Door"))
+
+                if(key)
                 {
-                    hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
+                    if (hit.collider.CompareTag("Door"))
+                    {
+                       hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
+                    }
                 }
 
                 if (hit.collider.CompareTag("Hidable"))

@@ -9,6 +9,11 @@ public class MonsterHealth : MonoBehaviour {
     public GameObject MonsterBody;
     MonsterMovement monsterMovement;
     CapsuleCollider capsuleCollider;
+
+    public Transform Monster;
+    public Transform StartingPos;
+    public float speed;
+    bool Died = false;
     bool IsHit;
 
 	void Awake ()
@@ -21,9 +26,13 @@ public class MonsterHealth : MonoBehaviour {
     {
         if(IsHit)
         {
-            monsterMovement.GetComponent<MonsterMovement>().MonsterToStart();
-            Invoke("MoveOn" , 20);
+
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(Monster.position, StartingPos.position, step);
+            MonsterBody.SetActive(false);
+            Invoke("MoveOn" , 5f);           
             CurrentHelth = TotalHealth;
+            IsHit = false;
         }
     }
 
@@ -36,7 +45,8 @@ public class MonsterHealth : MonoBehaviour {
 
         CurrentHelth -= amount;            
 
-        if(CurrentHelth <= 0)
+        if(CurrentHelth >= 0)
+
         {
             Hit();
         }
@@ -51,6 +61,6 @@ public class MonsterHealth : MonoBehaviour {
 
     void MoveOn()
     {
-        MonsterBody.SetActive(false);
+        MonsterBody.SetActive(true);
     }
 }
