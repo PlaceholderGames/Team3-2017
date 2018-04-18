@@ -2,32 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterMovement : MonoBehaviour {
+public class MonsterMovement : MonoBehaviour
+{
 
-    
-    public GameObject player;
+
+
     public Transform[] points;
     private int destPoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
-    private SphereCollider col;
     public float sightRange;
-
     public float patienceDelay = 5f;
+    public float viewAngle = 60f;
+
+    public LayerMask playerMask;
+
+    //[SerializeField]
+    //Camera cam;
 
     [SerializeField]
-    Camera cam;
+    GameObject player;
+
+
 
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        col = GetComponent<SphereCollider>();
-
-        if (cam == null)
-            cam = this.GetComponentInChildren<Camera>(); //finds camera if you haven't set it yourself
+        //if (cam == null)
+        //    cam = this.GetComponentInChildren<Camera>(); //finds camera if you haven't set it yourself
 
         if (player == null)
             player = GameObject.Find("First Person Controller (1)/Graphics"); //change to the players name if ever changed.
-        
+
         agent.autoBraking = false;
 
         GotoNextPoint();
@@ -60,40 +65,62 @@ public class MonsterMovement : MonoBehaviour {
 
     void Update()
     {
+        
         if (I_Can_See(player))//checks if the camera is rendering the player
         {
             RaycastHit hit;
             Physics.Raycast(transform.position, player.transform.position, out hit, sightRange);
-                if (hit.transform.tag == "Player")
-                {
-                    //move towards the player
-                    agent.SetDestination(player.transform.position);
-                }
-                else
-                {
-                    //RemoveMarker();
-                    //Invoke("ContinueJourney", patienceDelay);
-                }
-            Debug.Log("Player is in range");
+            if (hit.transform.tag == "Player")
+            {
+
+                //move towards the player
+                agent.SetDestination(player.transform.position);
+            }
+            else
+            {
+
+                //RemoveMarker();
+                //Invoke("ContinueJourney", patienceDelay);
+            }
+            //Debug.Log("Player is in range");
+            
         }
         else
         {
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 GotoNextPoint();
         }
-
-
-        
-
     }
 
     private bool I_Can_See(GameObject Object)
     {
-        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
-        if (GeometryUtility.TestPlanesAABB(planes, Object.GetComponent<Collider>().bounds))
-            return true;
-        else
-            return false;
-    }
+        Collider[] inRange = Physics.OverlapSphere(transform.position, sightRange, playerMask);
+        bool playerSee = false;
+        for (int i = 0; i < inRange.Length; i++)
+        {
+            Debug.DebugBreak();
+            Transform target = inRange[i].transform;
+            Vector3 DiroToTarget = (target.position - transform.position).normalized;
 
+            if (target.position == Object.transform.position)
+            {
+                if (Vector3.Angle(transform.forward, DiroToTarget) < viewAngle / 2)
+                {
+                    Debug.Log("They or the same!!");
+                    playerSee = true;
+                    break;
+                }
+            }
+           
+        }
+        return playerSee;
+        
+        //Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
+        //if (GeometryUtility.TestPlanesAABB(planes, Object.GetComponent<Collider>().bounds))
+        //    return true;
+        //else
+        //    return false;
+    }
 }
+
+

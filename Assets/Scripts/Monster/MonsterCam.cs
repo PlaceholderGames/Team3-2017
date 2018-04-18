@@ -40,10 +40,6 @@ public class MonsterCam : MonoBehaviour {
                     //move towards the player
                     nav.SetDestination(player.transform.position);
                 }
-                else
-                {
-
-                }
             }
         }
 	}

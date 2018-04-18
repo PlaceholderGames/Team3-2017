@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 170510122}
   - component: {fileID: 170510121}
   - component: {fileID: 170510120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First Person Controller (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1457,6 +1457,10 @@ Prefab:
     - target: {fileID: 400000, guid: c79448dc8649a354ea6a84c69a30f778, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c79448dc8649a354ea6a84c69a30f778, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c79448dc8649a354ea6a84c69a30f778, type: 3}
@@ -2481,7 +2485,7 @@ GameObject:
   - component: {fileID: 743870688}
   - component: {fileID: 743870689}
   - component: {fileID: 743870690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3963,7 +3967,7 @@ GameObject:
   - component: {fileID: 1064692009}
   - component: {fileID: 1064692008}
   - component: {fileID: 1064692007}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -5623,7 +5627,7 @@ GameObject:
   - component: {fileID: 1567262757}
   - component: {fileID: 1567262759}
   - component: {fileID: 1567262758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Graphics
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7595,7 +7599,7 @@ GameObject:
   - component: {fileID: 2087695036}
   m_Layer: 0
   m_Name: Monster
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -7611,8 +7615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af82a25918e2516439776b6bd49fbd2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nav: {fileID: 2087695037}
-  player: {fileID: 170510124}
   points:
   - {fileID: 1037559781}
   - {fileID: 526096233}
@@ -7620,10 +7622,13 @@ MonoBehaviour:
   - {fileID: 1503857498}
   - {fileID: 474467638}
   - {fileID: 621171888}
-  Monster: {fileID: 2087695035}
-  StartingPos: {fileID: 0}
-  seePlayer: 0
   sightRange: 6
+  patienceDelay: 5
+  viewAngle: 60
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  player: {fileID: 170510119}
 --- !u!23 &2087695032
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7682,13 +7687,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2087695030}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.7, y: 3.11, z: 71.5}
+  m_LocalRotation: {x: -0, y: 0.6911035, z: -0, w: 0.7227558}
+  m_LocalPosition: {x: -81.21, y: 6.06, z: 37.131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 87.435005, z: 0}
 --- !u!135 &2087695036
 SphereCollider:
   m_ObjectHideFlags: 0
