@@ -15,7 +15,7 @@ public class MonsterMovement : MonoBehaviour {
     private UnityEngine.AI.NavMeshAgent nav;
     public bool seePlayer;
     public float sightRange;
-
+    public float PlayerDistance;
 
     void Start()
     {
@@ -42,24 +42,26 @@ public class MonsterMovement : MonoBehaviour {
    
     void Update()
     {
-        seePlayer = false;
-        RaycastHit hit;
-        Ray MonsterHit = new Ray(transform.position, Vector3.forward);
+        //seePlayer = false;
+        //RaycastHit hit;
+        //Ray MonsterHit = new Ray(transform.position, Vector3.forward);
 
-        if (Physics.Raycast(MonsterHit, out hit, sightRange))
+        //if (Physics.Raycast(MonsterHit, out hit, sightRange))
+        //{
+
+        //    //Debug.DrawLine(MonsterHit.origin, hit.point);
+
+        //    if (hit.collider.tag == "Player")
+        //    {
+        //        seePlayer = true;
+        //    }
+        //}
+
+        PlayerDistance = Vector3.Distance(player.position, transform.position);
+
+        if (PlayerDistance < sightRange)
         {
-
-            //Debug.DrawLine(MonsterHit.origin, hit.point);
-
-            if (hit.collider.tag == "Player")
-            {
-                seePlayer = true;
-            }
-        }
-
-        if (seePlayer)
-        {
-            nav.SetDestination(player.position);
+            agent.SetDestination(player.position);
             Walk();
         }
         else
