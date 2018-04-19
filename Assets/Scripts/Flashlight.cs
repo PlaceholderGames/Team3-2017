@@ -22,7 +22,7 @@ public class Flashlight : MonoBehaviour {
             if (Spotlight.GetComponent<Light>().enabled == false)
             {
                 Spotlight.GetComponent<Light>().enabled = true;
-
+                Debug.Log("light on");
                 Timer = 0f;
 
                 ShootRay.origin = transform.position;
@@ -30,10 +30,12 @@ public class Flashlight : MonoBehaviour {
 
                 if (Physics.Raycast(ShootRay, out ShootHit, range))
                 {
+                    Debug.Log("Checking");
                     MonsterHealth monsterHealth = ShootHit.collider.GetComponent<MonsterHealth>();
 
                     if (monsterHealth != null)
                     {
+                        Debug.Log("Monster is hit");
                         monsterHealth.TakeDamage(DamagePerShot, ShootHit.point);
                     }
                 }
