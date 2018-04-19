@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterHealth : MonoBehaviour {
 
-    public int TotalHealth = 1;
+    public int TotalHealth = 3;
     public int CurrentHelth;
     public GameObject MonsterBody;
     MonsterMovement monsterMovement;

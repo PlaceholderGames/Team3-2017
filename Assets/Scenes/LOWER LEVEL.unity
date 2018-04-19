@@ -3758,7 +3758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: -7.7}
+  m_AnchoredPosition: {x: 70, y: -5.9}
   m_SizeDelta: {x: 33.2, y: 46.041}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &564984152
@@ -5406,6 +5406,7 @@ GameObject:
   - component: {fileID: 872157696}
   - component: {fileID: 872157695}
   - component: {fileID: 872157694}
+  - component: {fileID: 872157698}
   m_Layer: 0
   m_Name: AttackRange
   m_TagString: Untagged
@@ -5491,6 +5492,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 872157692}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &872157698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872157692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c52bb2013aed44ca796771a310aba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalHealth: 1
+  CurrentHelth: 0
+  MonsterBody: {fileID: 2087695030}
+  Monster: {fileID: 2087695035}
+  StartingPos: {fileID: 769993486}
+  speed: 9000
 --- !u!1 &889336886 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: a6ef385afe009df418cd619038b7c9e8, type: 3}
@@ -12962,7 +12980,6 @@ GameObject:
   - component: {fileID: 2087695032}
   - component: {fileID: 2087695037}
   - component: {fileID: 2087695039}
-  - component: {fileID: 2087695040}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Monster
@@ -13082,23 +13099,6 @@ MonoBehaviour:
   speed: 10
   seePlayer: 0
   sightRange: 10
---- !u!114 &2087695040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2087695030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c52bb2013aed44ca796771a310aba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TotalHealth: 1
-  CurrentHelth: 0
-  MonsterBody: {fileID: 2087695030}
-  Monster: {fileID: 2087695035}
-  StartingPos: {fileID: 769993486}
-  speed: 90000
 --- !u!1 &2103908835
 GameObject:
   m_ObjectHideFlags: 0
