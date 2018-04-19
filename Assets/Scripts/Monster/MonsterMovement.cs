@@ -13,7 +13,7 @@ public class MonsterMovement : MonoBehaviour
     public float sightRange;
     public float patienceDelay = 5f;
     public float viewAngle = 60f;
-
+    bool SeePlayer = false;
     public LayerMask playerMask;
 
     //[SerializeField]
@@ -22,7 +22,17 @@ public class MonsterMovement : MonoBehaviour
     [SerializeField]
     GameObject player;
 
+    void OnTriggerEnter()
+    {
+        Debug.Log("True");
+        SeePlayer = true;
+    }
 
+    void OnTriggerExit()
+    {
+        Debug.Log("False");
+        SeePlayer = false;
+    }
 
     void Start()
     {
@@ -66,24 +76,28 @@ public class MonsterMovement : MonoBehaviour
     void Update()
     {
         
-        if (I_Can_See(player))//checks if the camera is rendering the player
+        //if (I_Can_See(player))//checks if the camera is rendering the player
+        if (SeePlayer)
         {
-            RaycastHit hit;
-            Physics.Raycast(transform.position, player.transform.position, out hit, sightRange);
-            if (hit.transform.tag == "Player")
-            {
 
-                //move towards the player
-                agent.SetDestination(player.transform.position);
-            }
-            else
-            {
+            agent.SetDestination(player.transform.position);
 
-                //RemoveMarker();
-                //Invoke("ContinueJourney", patienceDelay);
-            }
-            //Debug.Log("Player is in range");
-            
+            //RaycastHit hit;
+            //Physics.Raycast(transform.position, player.transform.position, out hit, sightRange);
+            //if (hit.transform.tag == "Player")
+            //{
+
+            //    //move towards the player
+            //    agent.SetDestination(player.transform.position);
+            //}
+            //else
+            //{
+
+            //    //RemoveMarker();
+            //    //Invoke("ContinueJourney", patienceDelay);
+            //}
+            ////Debug.Log("Player is in range");
+
         }
         else
         {
@@ -92,35 +106,35 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 
-    private bool I_Can_See(GameObject Object)
-    {
-        Collider[] inRange = Physics.OverlapSphere(transform.position, sightRange, playerMask);
-        bool playerSee = false;
-        for (int i = 0; i < inRange.Length; i++)
-        {
-            Debug.DebugBreak();
-            Transform target = inRange[i].transform;
-            Vector3 DiroToTarget = (target.position - transform.position).normalized;
+    //private bool I_Can_See(GameObject Object)
+    //{
+    //    Collider[] inRange = Physics.OverlapSphere(transform.position, sightRange, playerMask);
+    //    bool playerSee = false;
+    //    for (int i = 0; i < inRange.Length; i++)
+    //    {
+    //        Debug.DebugBreak();
+    //        Transform target = inRange[i].transform;
+    //        Vector3 DiroToTarget = (target.position - transform.position).normalized;
 
-            if (target.position == Object.transform.position)
-            {
-                if (Vector3.Angle(transform.forward, DiroToTarget) < viewAngle / 2)
-                {
-                    Debug.Log("They or the same!!");
-                    playerSee = true;
-                    break;
-                }
-            }
+    //        if (target.position == Object.transform.position)
+    //        {
+    //            if (Vector3.Angle(transform.forward, DiroToTarget) < viewAngle / 2)
+    //            {
+    //                Debug.Log("They or the same!!");
+    //                playerSee = true;
+    //                break;
+    //            }
+    //        }
            
-        }
-        return playerSee;
+    //    }
+    //    return playerSee;
         
-        //Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
-        //if (GeometryUtility.TestPlanesAABB(planes, Object.GetComponent<Collider>().bounds))
-        //    return true;
-        //else
-        //    return false;
-    }
+    //    //Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
+    //    //if (GeometryUtility.TestPlanesAABB(planes, Object.GetComponent<Collider>().bounds))
+    //    //    return true;
+    //    //else
+    //    //    return false;
+    //}
 }
 
 
