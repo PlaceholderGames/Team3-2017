@@ -13,27 +13,15 @@ public class MonsterMovement : MonoBehaviour
     public float sightRange;
     public float patienceDelay = 5f;
     public float viewAngle = 60f;
-    bool SeePlayer = false;
     public LayerMask playerMask;
-
+    MonsterSight monsterSight;
+    bool SeePlayer = false;
     //[SerializeField]
     //Camera cam;
 
     [SerializeField]
     GameObject player;
-
-    void OnTriggerEnter()
-    {
-        Debug.Log("True");
-        SeePlayer = true;
-    }
-
-    void OnTriggerExit()
-    {
-        Debug.Log("False");
-        SeePlayer = false;
-    }
-
+    
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -77,9 +65,9 @@ public class MonsterMovement : MonoBehaviour
     {
         
         //if (I_Can_See(player))//checks if the camera is rendering the player
-        if (SeePlayer)
+        if (monsterSight.GetComponent<MonsterSight>().CheckSeePlayer())
         {
-
+            Debug.Log("Can see");
             agent.SetDestination(player.transform.position);
 
             //RaycastHit hit;
@@ -106,7 +94,7 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 
-    //private bool I_Can_See(GameObject Object)
+        //private bool I_Can_See(GameObject Object)
     //{
     //    Collider[] inRange = Physics.OverlapSphere(transform.position, sightRange, playerMask);
     //    bool playerSee = false;
@@ -125,10 +113,10 @@ public class MonsterMovement : MonoBehaviour
     //                break;
     //            }
     //        }
-           
+
     //    }
     //    return playerSee;
-        
+
     //    //Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
     //    //if (GeometryUtility.TestPlanesAABB(planes, Object.GetComponent<Collider>().bounds))
     //    //    return true;
