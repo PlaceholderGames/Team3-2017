@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MonsterAttack : MonoBehaviour {
 
-    public float timeBetweenAttacks = 0.5f;
-    public int attackDamage = 1;
-
+    public float timeBetweenAttacks = 1f;
+    public int attackDamage = 10;
+    public bool Bob;
     GameObject Player;
     PlayerHealth PlayerHealth;
 
@@ -15,22 +15,31 @@ public class MonsterAttack : MonoBehaviour {
 
     void Awake()
     {
+       // Debug.Log("IM awake");
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerHealth = Player.GetComponent<PlayerHealth>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == Player)
+        if (other.gameObject.CompareTag("Player"))
         {
+            //Debug.Log("In Range");
             PlayerInRange = true;
         }
     }
 
+    //void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    Debug.Log("It works");
+    //}
+
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == Player)
+        if (other.gameObject.CompareTag("Player"))
         {
+            //Debug.Log("out of range");
             PlayerInRange = false;
         }
     }
@@ -48,7 +57,7 @@ public class MonsterAttack : MonoBehaviour {
     void Attack()
     {
         Timer = 0f;
-
+        //Debug.Log("Attacked");
         if(PlayerHealth.CurrntHeath > 0)
         {
             PlayerHealth.TakeDamage(attackDamage);

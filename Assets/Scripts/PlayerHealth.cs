@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public int TotalHeath = 3;
+	public int TotalHeath = 30;
     public int CurrntHeath;
 
     bool IsDead;
     bool Damaged;
+    public Text Health;
 
 	void Awake ()
     {
@@ -21,7 +23,7 @@ public class PlayerHealth : MonoBehaviour {
 		
         if (Damaged)
         {
-           
+            Health.text = CurrntHeath.ToString();
         }
 	}
 

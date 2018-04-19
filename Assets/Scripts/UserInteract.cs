@@ -28,7 +28,15 @@ public class UserInteract : MonoBehaviour {
                        hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
                     }
                 }
+            }
+        }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, interactDistance))
+            {
                 if (hit.collider.CompareTag("Hidable"))
                 {
                     if (Hidden)
@@ -48,7 +56,6 @@ public class UserInteract : MonoBehaviour {
             }
         }
     }
- 
 }
 
 //This requires the Mesh of the interacted object to be a child of the main object, and tagged correctly to this code. For example, Door tag is on the mesh for the door.
