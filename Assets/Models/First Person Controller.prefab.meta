@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: afc42308f06749c4782ec94d7bdf2ca9
-labels:
-- Fabric
-- Pattern
-- Carpet
+guid: 7e09639f214f9e84794a00da37c5a16d
+timeCreated: 1524143737
+licenseType: Pro
 NativeFormatImporter:
   mainObjectFileID: -1
   userData: 
