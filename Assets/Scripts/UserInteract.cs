@@ -15,10 +15,13 @@ public class UserInteract : MonoBehaviour {
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit, interactDistance))
             {
-                if(hit.collider.CompareTag("Door"))
+                if (GameObject.Find("key") == null)
                 {
-                    hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
-                   
+                    if (hit.collider.CompareTag("Door"))
+                    {
+                        hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
+
+                    }
                 }
             }
         }
