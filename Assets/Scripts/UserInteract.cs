@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UserInteract : MonoBehaviour {
 
@@ -9,7 +10,6 @@ public class UserInteract : MonoBehaviour {
     public Camera HidingCamera;
     public Renderer Player;
     public bool Hidden = false;
-    public GameObject key;
     public Transform PlayerT;
 
     void Update()
@@ -20,12 +20,42 @@ public class UserInteract : MonoBehaviour {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, interactDistance))
-            { 
-                if(key)
+            {
+                if (GameObject.Find("key") == null)
                 {
                     if (hit.collider.CompareTag("Door"))
                     {
                        hit.collider.transform.parent.GetComponent<DoorScript>().ChangeDoorState();
+                    }
+                }
+                if (GameObject.Find("Crowbar") == null)
+                {
+                    if (Physics.Raycast(ray, out hit, interactDistance))
+                    {
+
+                        if (hit.collider.CompareTag("Basement door"))
+                        {
+                            GameObject[] bDoor = GameObject.FindGameObjectsWithTag("Basement door");
+
+                            foreach (GameObject bd in bDoor)
+                            {
+                                bd.SetActive(false);
+                            }
+                        }
+                    }
+
+                }
+
+                if (GameObject.Find("axe") == null)
+                {
+                    if (Physics.Raycast(ray, out hit, interactDistance))
+                    {
+                        if (hit.collider.CompareTag("Enddoor"))
+                        {
+                            SceneManager.LoadScene("Credits");
+                        }
+
+
                     }
                 }
             }
