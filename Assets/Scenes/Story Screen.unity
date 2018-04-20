@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30144ffb8d0f69843b7cc8f90a5674cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!82 &124399131
 AudioSource:
   m_ObjectHideFlags: 0
@@ -268,8 +270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 439, y: -30.5}
-  m_SizeDelta: {x: 597, y: 439}
+  m_AnchoredPosition: {x: 440, y: -67}
+  m_SizeDelta: {x: 599, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &126287169
 MonoBehaviour:
@@ -306,13 +308,19 @@ MonoBehaviour:
   m_Text: 'Movement -  W, A, S, D
 
 
+    Hide - E
+
+
     Look Around - Mouse
 
 
     Interact - Left Click
 
 
-    Torch - Right Click'
+    Torch - Right Click
+
+
+    Pause - Escape'
 --- !u!222 &126287170
 CanvasRenderer:
   m_ObjectHideFlags: 0
