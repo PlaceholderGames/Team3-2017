@@ -7,6 +7,8 @@ TagManager:
   - Door
   - Enddoor
   - Basement door
+  - Hidable
+  - Monster
   layers:
   - Default
   - TransparentFX
