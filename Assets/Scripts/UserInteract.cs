@@ -9,7 +9,6 @@ public class UserInteract : MonoBehaviour {
     public Camera HidingCamera;
     public Renderer Player;
     public bool Hidden = false;
-    public GameObject key;
     public Transform PlayerT;
 
     void Update()
@@ -21,7 +20,7 @@ public class UserInteract : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, interactDistance))
             { 
-                if(key)
+                if(GameObject.Find("key") == null)
                 {
                     if (hit.collider.CompareTag("Door"))
                     {
